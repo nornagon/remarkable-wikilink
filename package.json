@@ -1,0 +1,29 @@
+{
+  "name": "remarkable-wikilink",
+  "version": "0.1.0",
+  "description": "Parse [[wiki-style links]] in markdown with Remarkable",
+  "main": "index.js",
+  "peerDependencies": {
+    "remarkable": "2.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nornagon/remarkable-wikilink.git"
+  },
+  "keywords": [
+    "remarkable",
+    "markdown",
+    "wiki",
+    "link",
+    "wikilink"
+  ],
+  "author": "Jeremy Apthorp <nornagon@nornagon.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nornagon/remarkable-wikilink/issues"
+  },
+  "homepage": "https://github.com/nornagon/remarkable-wikilink#readme"
+}
