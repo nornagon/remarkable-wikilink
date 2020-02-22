@@ -1,6 +1,6 @@
 {
   "name": "remarkable-wikilink",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parse [[wiki-style links]] in markdown with Remarkable",
   "main": "index.js",
   "peerDependencies": {

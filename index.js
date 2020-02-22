@@ -28,7 +28,7 @@ function wikilinkRule(state, silent) {
   state.posMax = state.pos
   state.pos = start + 2
   if (!silent) {
-    state.push({ type: 'link_open', href: src.substring(labelStart, labelEnd), level: state.level++ } as any)
+    state.push({ type: 'link_open', href: src.substring(labelStart, labelEnd), level: state.level++ })
     state.linkLevel++
     state.parser.tokenize(state)
     state.linkLevel--
