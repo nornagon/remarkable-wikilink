@@ -1,7 +1,6 @@
 # remarkable-wikilink
 
-This is a plugin for the [Remarkable][] markdown parser which adds
-`[[MediaWiki-style links]]`.
+This is a plugin for the [Remarkable][] markdown parser which adds support for `[[MediaWiki-style links]]`.
 
 ## Usage
 
