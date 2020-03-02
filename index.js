@@ -1,3 +1,5 @@
+const { utils: { escapeHtml } } = require('remarkable')
+
 function wikilinkRule(state, silent) {
   const {pos: start, src, posMax} = state
   const ch = src.charCodeAt(start)
@@ -28,11 +30,11 @@ function wikilinkRule(state, silent) {
   state.posMax = state.pos
   state.pos = start + 2
   if (!silent) {
-    state.push({ type: 'link_open', href: src.substring(labelStart, labelEnd), level: state.level++ })
+    state.push({ type: 'wikilink_open', href: src.substring(labelStart, labelEnd), level: state.level++ })
     state.linkLevel++
     state.parser.tokenize(state)
     state.linkLevel--
-    state.push({ type: 'link_close', level: --state.level })
+    state.push({ type: 'wikilink_close', level: --state.level })
   }
 
   state.pos = state.posMax + 2
@@ -40,6 +42,15 @@ function wikilinkRule(state, silent) {
   return true
 }
 
+const wikilink_open = function(tokens, idx, options /*, env */) {
+  return `<a href="${escapeHtml(tokens[idx].href)}" class="wikilink">`;
+};
+const wikilink_close = function(/* tokens, idx, options, env */) {
+  return '</a>';
+};
+
 module.exports = function wikilink(md, opts) {
   md.inline.ruler.push("wikilink", wikilinkRule)
+  md.renderer.rules.wikilink_open = wikilink_open
+  md.renderer.rules.wikilink_close = wikilink_close
 }
