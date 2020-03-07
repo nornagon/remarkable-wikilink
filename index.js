@@ -43,7 +43,7 @@ function wikilinkRule(state, silent) {
 }
 
 const wikilink_open = function(tokens, idx, options /*, env */) {
-  return `<a href="${escapeHtml(tokens[idx].href)}" class="wikilink">`;
+  return `<a href="${escapeHtml(encodeURIComponent(tokens[idx].href))}" class="wikilink">`;
 };
 const wikilink_close = function(/* tokens, idx, options, env */) {
   return '</a>';
